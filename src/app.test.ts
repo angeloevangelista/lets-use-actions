@@ -14,3 +14,14 @@ describe('/ endpoint', () => {
     });
   });
 });
+
+describe('/:name endpoint', () => {
+  it('should return a 200 response with a "Hello, Angelo" message', async () => {
+    const response = await request.get('/Angelo');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toStrictEqual({
+      message: 'Hello, Angelo',
+    });
+  });
+});
