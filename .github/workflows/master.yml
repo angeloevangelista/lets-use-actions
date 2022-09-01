@@ -40,6 +40,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use deploy to fly.io action
+      - name: Install flyctl to deploy
         uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy to fly.io using flyctl
         run: flyctl deploy --remote-only
